@@ -16,7 +16,14 @@ How to run this software on a folder full of stacked tiffs, 512x512x1000
   	  py_all ckpy_all px ckpx stoich_to_keep] = BBSBfn(all_good_traces,save_out_str)
 	This will call P_scan in order to calculate the max peak of the ECF, to determine the primary bleaching decrement.
 
+If you use this code, please cite:
+M. A. B. Baker, et al., ChemBioChem. 15, 2139–2145 (2014).
 
+BSD 2-Clause License
+Copyright (c) 2011, Matthew Baker
+All rights reserved.
+
+questions? phatmattbaker@gmail.com
 
 
 
