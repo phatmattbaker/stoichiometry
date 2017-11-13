@@ -16,6 +16,25 @@ How to run this software on a folder full of stacked tiffs, 512x512x1000
   	  py_all ckpy_all px ckpx stoich_to_keep] = BBSBfn(all_good_traces,save_out_str)
 	This will call P_scan in order to calculate the max peak of the ECF, to determine the primary bleaching decrement.
 
+Basically, you just want to use LabelYield in a directory full of images, that will call labelselectpatches and should work.
+But it is expecting 512x512x1000 images, if you have a folder of something else then you'll need to change a few things.
+
+In particular:
+In LabelYield:
+Line 24: max_images = 1000; 
+Line 43-46:
+	num_of_patch = 20;
+	size_of_patch = 5;
+	signal_to_noise_multiple = 2.5
+	tail = 20;
+
+If not doing 512x512 images change:
+in labelselectpatches:
+Line 14: maxpixels = 512; 
+
+You should note that trying to do 1024x1024 images or larger will likely fail due to memory, so ideally use this on 512x512 images or smaller.
+
+
 If you use this code, please cite:
 M. A. B. Baker, et al., ChemBioChem. 15, 2139–2145 (2014).
 
@@ -25,4 +44,4 @@ All rights reserved.
 
 questions? phatmattbaker@gmail.com
 
-(test edit and commit)
+
